@@ -1,0 +1,163 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+
+.MuiFormLabel-root {
+  // padding: 10px !important;
+}
+
+.MuiAutocomplete-root {
+  background-color: $grey2;
+  padding: 14px 0px 10px 0px;
+  border-radius: 4px;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: none !important;
+  border-color: #125ee1;
+  padding: 14px 0px 6px 0px;
+}
+
+.custom-options {
+  font-size: 14px;
+  line-height: 21px;
+  padding: 10px !important;
+}
+
+.select-bank-dropdown {
+  background-color: $grey3 !important;
+  padding: 0px !important;
+  .MuiOutlinedInput-root {
+    background: $grey3;
+    font-weight: bolder !important;
+    font-size: 15px;
+  }
+  .MuiFilledInput-root {
+    background: $grey3;
+    font-size: 14px;
+    font-weight: bolder;
+    border-bottom: 1px solid $white !important;
+  }
+  .MuiFilledInput-root:hover,
+  .MuiFilledInput-root:focus,
+  .MuiFilledInput-root:active {
+    background: $grey3;
+  }
+  .Mui-focused {
+    border-bottom: none !important;
+  }
+}
+
+.payment-mandate-dropdown {
+  background-color: $grey2 !important;
+  padding: 0px !important;
+  .MuiOutlinedInput-root {
+    background: $grey3;
+    font-weight: bolder !important;
+    font-size: 15px;
+  }
+  .MuiFilledInput-root {
+    background: $grey2;
+    font-size: 14px;
+    font-weight: bolder;
+    border-bottom: 2px solid $white !important;
+  }
+  .MuiFilledInput-root:hover,
+  .MuiFilledInput-root:focus,
+  .MuiFilledInput-root:active {
+    background: $grey2;
+  }
+  .Mui-focused {
+    border-bottom: none !important;
+  }
+}
+
+.apa-dropdown {
+  background-color: $grey2 !important;
+  padding: 0px !important;
+  .MuiOutlinedInput-root {
+    background: $grey3;
+    font-weight: bolder !important;
+    font-size: 15px;
+  }
+  .MuiFilledInput-root {
+    background: $grey3;
+    font-size: 14px;
+    font-weight: bolder;
+    border-bottom: 1px solid $white !important;
+  }
+  .MuiFilledInput-root:hover,
+  .MuiFilledInput-root:focus,
+  .MuiFilledInput-root:active {
+    background: $grey3;
+  }
+  .Mui-focused {
+    border-bottom: none !important;
+  }
+
+  &.empty {
+    .MuiFilledInput-root {
+      background: $grey3;
+      font-size: 14px;
+      font-weight: bolder;
+      border-bottom: none !important;
+    }
+  }
+}
+
+.contracts-filter {
+  background-color: $grey2 !important;
+  padding: 0px !important;
+  .MuiOutlinedInput-root {
+    background: $grey2;
+    font-weight: bolder !important;
+    font-size: 15px;
+  }
+  .MuiFilledInput-root {
+    background: $grey2;
+    font-size: 14px;
+    font-weight: bolder;
+    border-bottom: 1px solid $white !important;
+  }
+  .MuiFilledInput-root:hover,
+  .MuiFilledInput-root:focus,
+  .MuiFilledInput-root:active {
+    background: $grey2;
+  }
+  .Mui-focused {
+    border-bottom: none !important;
+  }
+
+  &.empty {
+    .MuiFilledInput-root {
+      background: $grey2;
+      font-size: 14px;
+      font-weight: bolder;
+      border-bottom: none !important;
+    }
+  }
+}
+
+.error {
+  .MuiFilledInput-root {
+    border-bottom: 0px !important;
+  }
+}
+
+.estimated-arr-dropdown {
+  background-color: #030914 !important;
+  .MuiAutocomplete-inputRoot {
+    background-color: $grey3 !important;
+  }
+}
+
+.zoho-book-integration {
+  background-color: $grey2 !important;
+  .MuiAutocomplete-inputRoot {
+    background-color: $grey3 !important;
+  }
+}
+.MuiAutocomplete-endAdornment {
+  background-color: transparent !important;
+  .MuiIconButton-root {
+    color: $white !important;
+  }
+}

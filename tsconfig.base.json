@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@bridgeup/common": ["libs/common/src/index.ts"],
+      "@bridgeup/common/apollo/*": ["libs/common/src/lib/apollo/*"],
+      "@bridgeup/common/auth/*": ["libs/common/src/lib/auth/*"],
+      "@bridgeup/common/components/*": ["libs/common/src/lib/components/*"],
+      "@bridgeup/common/formatter": ["libs/common/src/lib/formatter/index.ts"],
+      "@bridgeup/common/hooks": ["libs/common/src/lib/hooks/index.ts"],
+      "@bridgeup/common/design-system/*": [
+        "libs/common/src/lib/design-system/*"
+      ],
+      "@bridgeup/common/theme": ["libs/common/src/lib/theme/theme.ts"],
+      "@bridgeup/data-access": ["libs/data-access/src/index.ts"],
+      "@bridgeup/data-access/hooks/*": ["libs/data-access/src/lib/hooks/*"],
+      "@bridgeup/data-access/models/*": ["libs/data-access/src/lib/models/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

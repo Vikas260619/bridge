@@ -1,0 +1,48 @@
+#import "./../fragments/bid-data-by-deal.fragment.graphql"
+
+query getCompanyDetails($dealId: Int!) {
+  deal(where: { id: { _eq: $dealId } }) {
+    id
+    bid_closure
+    status
+    company_score {
+      rating
+      arr
+      updated_at
+      financials_score
+      business_growth_score
+      capital_efficiency_score
+      customer_value_score
+      compliance_score
+      min_recommended_bid
+      max_recommended_bid
+      arpa
+      churn
+      estimated_runway
+      gross_margin
+      capital_efficiency_score
+      dtoe_ratio
+      net_profit
+      net_cash_flow
+      ltv_cac
+      revenue_retention
+      mrr_growth
+      min_bid_price
+      report_file_id
+    }
+    company {
+      id
+      description
+      incorporation_date
+      total_funding
+      total_customers
+      marquee_customers
+      marquee_investors
+      remaining_tradable_value
+      ref_company_type {
+        name
+      }
+    }
+    ...bidDataByDealFragment
+  }
+}

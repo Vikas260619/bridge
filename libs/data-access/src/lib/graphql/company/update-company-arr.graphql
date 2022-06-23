@@ -1,0 +1,8 @@
+mutation updateEstimatedArr($estimated_arr: numeric) {
+  update_company(
+    _set: { estimated_arr: $estimated_arr }
+    where: {}
+  ) {
+    affected_rows
+  }
+}

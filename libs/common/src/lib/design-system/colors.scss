@@ -1,0 +1,31 @@
+.color-status-warning,
+.text-warning {
+  color: $warning;
+}
+
+.color-status-success,
+.text-success {
+  color: $success;
+}
+
+.color-status-error,
+.text-error {
+  color: $error;
+}
+
+.color-status-info,
+.text-info {
+  color: $info;
+}
+
+.bg-color-primary {
+  background: $grey1;
+}
+
+.bg-color-secondary {
+  background: $grey2 !important;
+}
+
+.color-secondary {
+  color: $secondary;
+}

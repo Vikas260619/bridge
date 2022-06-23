@@ -1,0 +1,50 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+
+.place-trade-stepper {
+  .MuiStepIcon-root {
+    color: #11213f;
+    background-color: azure;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    .MuiStepIcon-text {
+      fill: $white;
+    }
+    &.Mui-active {
+      color: #161b25;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      border: 1px solid $secondary;
+      .MuiStepIcon-text {
+        fill: $secondary;
+      }
+    }
+    &.Mui-completed {
+      color: #161b25;
+      background-color: azure;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      border: 1px solid #38ef7d;
+    }
+  }
+
+  .MuiStepLabel-labelContainer {
+    .MuiStepLabel-label {
+      font-weight: bold;
+      font-size: 14px;
+      color: $textColor1;
+      &.Mui-completed {
+        color: $white;
+      }
+      &.Mui-active {
+        color: $secondary;
+      }
+    }
+  }
+
+  .MuiStepConnector-line {
+    border: 0px solid transparent;
+  }
+}

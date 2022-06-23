@@ -1,0 +1,14 @@
+mutation updateIntegrationAuth($orgId: String, $id: Int!) {
+  update_integration_auth(_set: {source_account_id: $orgId}, where: {id: {_eq: $id}}) {
+    returning {
+      id
+    }
+  }
+}
+
+
+mutation zohoAccountingSync($source: String!) {
+  accountingSync(args: {source: $source}) {
+    message
+  }
+}

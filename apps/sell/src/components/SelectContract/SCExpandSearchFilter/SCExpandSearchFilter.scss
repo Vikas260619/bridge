@@ -1,0 +1,8 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+
+.pc-filter-btn {
+  background-color: $grey3 !important;
+  min-width: 220px !important;
+  border: 1px solid $textColor3 !important;
+  color: $textColor3 !important;
+}

@@ -1,0 +1,7 @@
+query getUser {
+  user(where:{}) {
+    last_name
+    first_name
+    id
+  }
+}

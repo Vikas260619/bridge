@@ -1,0 +1,103 @@
+query getCompanyDetail {
+  company {
+    estimated_arr
+    id
+    name
+    gstin
+    status
+    remaining_tradable_value
+  }
+}
+
+query getCompany {
+  company {
+    estimated_arr
+    id
+    name
+    gstin
+    status
+    min_tradable_value
+    remaining_tradable_value
+    deals(order_by: { created_at: desc }, limit: 1, offset: 0) {
+      status
+      company_score {
+        arr
+      }
+      id
+      bid_closure
+      deal_expiry
+      bids(order_by: { price: desc, created_at: desc }, limit: 1) {
+        price
+        id
+      }
+      trades(order_by: { created_at: desc }, limit: 1, offset: 0) {
+        id
+        fees
+        selected_customers_value
+        payout_value
+        mandate_type
+        status
+        mandate_account_id
+        signing_inputs
+        apa_generated_file_id
+        signed_mandate_file_id
+        apa_signed_file_id
+        mandate_account {
+          id
+          account_no
+          account_type
+          bank_id
+          ifsc_code
+          name
+          tenant_id
+          multi_signatory
+          ref_bank {
+            name
+            bank_code
+          }
+        }
+      }
+    }
+  }
+}
+
+query getCompanyWithPan {
+  company {
+    active_gstin
+    id
+    name
+    pan
+  }
+}
+
+query userTrades($trade_id: Int!) {
+  trade_subscription(
+    where: { trade_id: { _eq: $trade_id } }
+    order_by: { id: desc }
+  ) {
+    subscription_id
+  }
+}
+
+mutation updateCompany($gstin: String) {
+  update_company(_set: { active_gstin: $gstin }, where: {}) {
+    returning {
+      id
+    }
+  }
+}
+
+query userAccount($where: account_bool_exp!) {
+  account(where: $where) {
+    id
+    account_no
+    ref_bank {
+      name
+      id
+    }
+    ifsc_code
+    name
+    is_primary
+    account_type
+  }
+}

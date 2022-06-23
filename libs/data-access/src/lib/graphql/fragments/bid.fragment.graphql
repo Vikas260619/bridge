@@ -1,0 +1,6 @@
+fragment bidFragment on bid {
+  id
+  price
+  created_at
+  your_bid
+}

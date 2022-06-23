@@ -1,0 +1,95 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+
+.MuiButton-root {
+  border-radius: 0px !important;
+}
+
+.button {
+  padding: 10px !important;
+  font-weight: bold !important;
+  font-size: 14px !important;
+  line-height: 21px !important;
+  letter-spacing: 1px;
+  font-weight: bold !important;
+  font-size: 14px !important;
+}
+
+.primary-button {
+  background: linear-gradient(90deg, #62bdff 0%, #3864ff 98.91%);
+  color: #fff !important;
+  &.width260 {
+    width: 260px;
+  }
+  &.MuiButton-root:hover {
+    background: linear-gradient(268.1deg, #1b4ef9 0%, #007dd5 98.94%);
+  }
+}
+
+.primary-button-disabled {
+  background: $grey2 !important;
+  color: $textColor3 !important;
+  border: 1px solid $textColor3 !important;
+}
+
+.secondary-button {
+  border: 1px solid $secondary !important;
+  color: $secondary !important;
+  &.width260 {
+    width: 260px;
+  }
+  &.MuiButton-root:hover {
+    border: 1px solid #1a52f7 !important;
+    color: #1b4ef9 !important;
+  }
+}
+
+.teritary-button {
+  background: none !important;
+  color: $secondary !important;
+  &.width260 {
+    width: 260px;
+  }
+  &.MuiButton-root:hover {
+    color: $secondary;
+    background: #d7e0ff !important;
+  }
+}
+
+.page-not-found-button {
+  padding: 10px 40px !important;
+}
+
+.pm-button {
+  max-width: 400px;
+  padding: 10px 40px !important;
+}
+
+// upload signed copy button
+.pm-usc-button {
+  max-width: 400px;
+  padding: 12px 40px !important;
+}
+
+.payment-mandate__body .pm-button-disabled {
+  background-color: $grey2;
+  color: $textColor3;
+  &:hover {
+    background-color: $grey2;
+    color: $textColor3;
+    cursor: default;
+  }
+}
+
+.apa-btn {
+  max-width: 200px;
+  padding: 10px 40px !important;
+}
+.apa-button-disabled {
+  background-color: $grey2;
+  color: $textColor3;
+  &:hover {
+    background-color: $grey2;
+    color: $textColor3;
+    cursor: default;
+  }
+}

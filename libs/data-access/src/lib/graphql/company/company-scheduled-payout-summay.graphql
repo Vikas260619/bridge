@@ -1,0 +1,14 @@
+query getCompanyScheduledPayoutSummary {
+  scheduled_payout(
+    where: { scheduled_at: { _gte: "now()" } }
+    order_by: { scheduled_at: asc }
+    limit: 3
+  ) {
+    trade {
+      id
+      code
+    }
+    scheduled_at
+    amount
+  }
+}

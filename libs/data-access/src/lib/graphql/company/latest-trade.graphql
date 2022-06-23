@@ -1,0 +1,13 @@
+query getLatestTrades {
+  trade(order_by: { created_at: desc }, limit: 5) {
+    created_at
+    id
+    code
+    state
+    selected_customers_value
+    payout_value
+    bid {
+      price
+    }
+  }
+}

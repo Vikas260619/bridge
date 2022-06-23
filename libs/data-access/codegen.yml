@@ -1,0 +1,40 @@
+overwrite: true
+schema:
+  - ${HASURA_URL}:
+      headers:
+        x-hasura-admin-secret: ${HASURA_ADMIN_SECRET}
+generates:
+  libs/data-access/src/lib/types.ts:
+    - typescript
+  investor/:
+    documents:
+      - 'libs/data-access/src/lib/graphql/investor/*.graphql'
+      - 'libs/data-access/src/lib/graphql/fragments/*.graphql'
+    preset: near-operation-file
+    presetConfig:
+      extension: .hooks.tsx
+      baseTypesPath: ./../types.ts
+      cwd: libs/data-access/src/lib
+      folder: ~./../../../hooks/investor
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo
+      - 'named-operations-object'
+    config:
+      withHooks: true
+  company/:
+    documents:
+      - 'libs/data-access/src/lib/graphql/company/*.graphql'
+      - 'libs/data-access/src/lib/graphql/fragments/*.graphql'
+    preset: near-operation-file
+    presetConfig:
+      extension: .hooks.tsx
+      baseTypesPath: ./../types.ts
+      cwd: libs/data-access/src/lib
+      folder: ~./../../../hooks/company
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo
+      - 'named-operations-object'
+    config:
+      withHooks: true

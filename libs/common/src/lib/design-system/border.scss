@@ -1,0 +1,17 @@
+.inner-border {
+  border-color: $innerBorderColor;
+  border-width: $innerBorderWidth;
+  border-style: solid;
+}
+.inner-border-b {
+  border-color: $innerBorderColor;
+  border-width: $innerBorderWidth;
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+.border-none {
+  border: none;
+}

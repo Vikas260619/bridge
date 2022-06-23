@@ -1,0 +1,38 @@
+#import "./../fragments/bid.fragment.graphql"
+query activeDeals(
+  $where: deal_bool_exp
+  $order_by: [deal_order_by!]
+  $offset: Int
+  $limit: Int
+) {
+  deal_aggregate(where: $where) {
+    aggregate {
+      count
+    }
+  }
+  deal(where: $where, order_by: $order_by, offset: $offset, limit: $limit) {
+    id
+    bid_closure
+    status
+    company {
+      id
+      remaining_tradable_value
+    }
+    company_score {
+      rating
+      min_bid_price
+      min_recommended_bid
+    }
+    highest_bid(where: { id: { _is_null: false } }) {
+      ...bidFragment
+    }
+    bids_aggregate(order_by: { price: desc, created_at: desc }) {
+      aggregate {
+        count
+      }
+      nodes {
+        ...bidFragment
+      }
+    }
+  }
+}

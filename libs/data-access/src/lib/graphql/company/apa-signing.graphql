@@ -1,0 +1,15 @@
+mutation generateAPAMutation($args: GenerateAPAInput!) {
+  generateAPA(args: $args) {
+    signing_link
+    url
+    file_registry_id
+  }
+}
+
+
+mutation previewAPAMutation($args: PreviewAPAInput!) {
+  previewAPA(args: $args) {
+    url
+    file_registry_id
+  }
+}

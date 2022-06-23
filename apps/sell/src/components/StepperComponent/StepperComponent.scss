@@ -1,0 +1,33 @@
+.stepper-component-main-grid {
+  min-height: 100vh;
+  position: relative;
+  background-color: #0b111d;
+  background-size: 100%;
+  background-image: url('../../assets/images/bg.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  align-self: stretch;
+}
+
+.stepper-logout-div {
+  padding-left: 60px;
+  margin-top: 80px;
+  .stepper-logout {
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 1px;
+  }
+  .circular-progress {
+    margin-left: 20px;
+    visibility: visible;
+  }
+  .circular-progress-hidden {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 1400px) {
+  .stepper-logout-div {
+    margin-top: 80px;
+  }
+}

@@ -1,0 +1,9 @@
+#import "./../fragments/bid-data-by-deal.fragment.graphql"
+
+query getBidDataByDeal($dealId: Int!) {
+  deal_by_pk(id: $dealId) {
+    id
+    status
+    ...bidDataByDealFragment
+  }
+}

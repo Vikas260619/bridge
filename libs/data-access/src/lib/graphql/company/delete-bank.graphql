@@ -1,0 +1,5 @@
+mutation deleteBank( $modelName: DeletableModel!, $where: jsonb!) {
+  delete(args: {modelName: $modelName, where: $where}) {
+    message
+  }
+}

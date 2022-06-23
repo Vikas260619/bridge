@@ -1,0 +1,42 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+
+.payment-mandate {
+  background-color: #030914;
+  .cancel-trade-text {
+    color: #fa002d;
+  }
+
+  .mandate-desc {
+    color: $textColor3;
+  }
+
+  .mandate-detail-image-div {
+    background-color: #030914;
+  }
+
+  &__body {
+    background-color: $grey3;
+  }
+
+  .pm-doc-details {
+    color: #e5e5e5;
+  }
+}
+
+@media (max-width: 1000px) {
+  .payment-mandate {
+    .pm-left-grid {
+      padding-left: 2px !important;
+      padding-right: 2px !important;
+    }
+    .pm-right-grid {
+      padding-left: 2px !important;
+      padding-right: 2px !important;
+    }
+
+    .pm-input-item {
+      padding-left: 2px !important;
+      padding-right: 2px !important;
+    }
+  }
+}

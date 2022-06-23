@@ -1,0 +1,6 @@
+query getCountryList {
+  ref_country(limit: 10) {
+    name
+    id
+  }
+}

@@ -1,0 +1,25 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+
+.error-page {
+  width: 100vw;
+  height: 100vh;
+
+  &__logo {
+    height: 10%;
+    background-color: #0b111d;
+  }
+
+  &__desc {
+    height: 90%;
+    background-color: #030914;
+
+    &__header {
+      font-weight: 1000;
+      color: $textColor1;
+    }
+
+    &__body {
+      color: $textColor3;
+    }
+  }
+}

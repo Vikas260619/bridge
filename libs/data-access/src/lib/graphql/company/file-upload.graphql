@@ -1,0 +1,76 @@
+mutation generateFileRegistryUploadURL(
+  $name: String!
+  $category_id: String!
+  $content_type: String
+) {
+  generateFileRegistryUploadURL(
+    args: {
+      name: $name
+      category_id: $category_id
+      content_type: $content_type
+    }
+  ) {
+    file_registry_id
+    upload_url
+  }
+}
+
+query generateFileDownloadUrl($fileId: Int!) {
+  generateFileRegistryDownloadURL(args: { file_registry_id: $fileId }) {
+    download_url
+  }
+}
+
+mutation subscriptionCSV(
+  $file_id: Int!
+  $isReplaceSub: Boolean!
+  $modelName: DeletableModel!
+  $where: jsonb!
+) {
+  delete(args: { modelName: $modelName, where: $where })
+    @skip(if: $isReplaceSub) {
+    message
+  }
+  subscriptionCSVUpload(args: { file_id: $file_id }) {
+    message
+  }
+}
+mutation subscriptionCSVUpload($file_id: Int!) {
+  subscriptionCSVUpload(args: { file_id: $file_id }) {
+    message
+  }
+}
+
+mutation accountingExcelUpload($file_ids: [Int!]) {
+  accountingExcelUpload(args: { file_ids: $file_ids }) {
+    message
+  }
+}
+
+mutation fileRegistryUpdatePasswords(
+  $args: [fileRegistryUpdatePasswordsInput!]
+) {
+  fileRegistryUpdatePasswords(args: $args) {
+    message
+  }
+}
+
+mutation bankStatementsUpload(
+  $bankId: Int!
+  $is_primary: Boolean!
+  $file_registry_ids: [Int!]!
+  $account_type: String!
+  $sequence: Int!
+) {
+  bankStatementsUpload(
+    args: {
+      bank_id: $bankId
+      is_primary: $is_primary
+      file_registry_ids: $file_registry_ids
+      account_type: $account_type
+      sequence: $sequence
+    }
+  ) {
+    message
+  }
+}

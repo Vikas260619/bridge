@@ -1,0 +1,49 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+
+.image-bg-color {
+  background: $grey2;
+}
+
+.stats-card-image {
+  background: $grey2;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+}
+
+.label-color {
+  color: $textColor3;
+}
+
+.deal-closure-text {
+  color: #00ff91;
+}
+
+.contracts-under-review-text {
+  color: #99b1ff;
+  border: 1px solid #4470ff;
+  background: rgba(68, 112, 255, 0.1);
+  border-radius: 4px;
+}
+
+@media (max-width: 1400px) {
+  .detail-div {
+    .detail-div-item {
+      .value-text {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .detail-div {
+    overflow: auto;
+    .detail-div-item {
+      min-width: 200px;
+      .value-text {
+        font-size: 14px;
+      }
+    }
+  }
+}

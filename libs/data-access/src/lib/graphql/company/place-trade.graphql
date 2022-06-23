@@ -1,0 +1,84 @@
+query getCustomers($where1: subscription_bool_exp, $where2: subscription_bool_exp, $order_by: [subscription_order_by!], $offset: Int, $limit: Int, $bid_price: float8, $whereTradeSub: trade_subscription_bool_exp, $withTradeSubscriptions: Boolean!) {
+  subscription_aggregate(where: $where1) {
+    aggregate {
+      count
+    }
+  }
+  subscription(where: $where2, order_by: $order_by, offset: $offset, limit: $limit) {
+    id
+    customer_identifier
+    customer_email
+    customer_name
+    billing_period
+    amount_per_period
+    amount_per_month
+    billing_period_interval
+    bid_amount(args: {bid_price: $bid_price})
+  }
+  trade_subscription(where: $whereTradeSub, order_by: {id: desc}) @include(if: $withTradeSubscriptions) {
+    subscription_id
+  }
+}
+
+mutation initiateTrade($args: InitiateTradeInput!) {
+  initiateTrade(args: $args) {
+    code
+    id
+  }
+}
+
+mutation registerMandate($args: RegisterNachMandateInput!) {
+  registerNachMandate(args: $args) {
+    message
+    url
+  }
+}
+
+query searchIFSC($args: searchIFSCInput!) {
+  searchIFSC(args: $args) {
+    bank_code
+    bank {
+      id
+    }
+    ifsc
+  }
+}
+
+query getNachMandateProperties($tradeId: Int!) {
+  getNachMandateProperties(args: { trade_id: $tradeId }) {
+    final_collection_date
+    first_collection_date
+    mandate_type
+    monthly_emi
+  }
+}
+
+query downloadPrefilledNachMandate($tradeId: Int!) {
+  downloadPrefilledNachMandate(args: { trade_id: $tradeId }) {
+    url
+  }
+}
+
+mutation uploadSignedNachMandate($tradeId: Int!) {
+  uploadSignedNachMandate(args: { trade_id: $tradeId }) {
+    url
+  }
+}
+
+mutation submitSignedNachMandate($tradeId: Int!) {
+  submitSignedNachMandate(args: { trade_id: $tradeId }) {
+    message
+  }
+}
+
+mutation editTradeContracts($args: EditTradeContractsInput!) {
+  editTradeContracts(args: $args) {
+    message
+  }
+}
+
+mutation updateTradeStatus($where: trade_bool_exp!, $status: String!) {
+  update_trade(_set: {status: $status}, where: $where) {
+    affected_rows
+  }
+}

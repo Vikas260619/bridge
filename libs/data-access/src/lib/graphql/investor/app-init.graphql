@@ -1,0 +1,14 @@
+query BuyUserInit {
+  investor_user {
+    user {
+      id
+      first_name
+      last_name
+    }
+    investor {
+      id
+      name
+      status
+    }
+  }
+}

@@ -1,0 +1,5 @@
+mutation placeBid($args: PlaceBidInput!) {
+  placeBid(args: $args) {
+    bid_id
+  }
+}

@@ -1,0 +1,12 @@
+query getCompanyPrimaryAccount {
+  account(where: { is_primary: { _eq: true } }) {
+    id
+    name
+    account_no
+    ref_bank {
+      name
+      bank_code
+      id
+    }
+  }
+}

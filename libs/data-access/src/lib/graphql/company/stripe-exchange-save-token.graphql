@@ -1,0 +1,7 @@
+mutation exchangeSaveToken($source: String!, $params: jsonb!) {
+    exchangeSaveToken(args:{source: $source , params: $params}) {
+        message
+        id 
+        metadata
+    }
+}

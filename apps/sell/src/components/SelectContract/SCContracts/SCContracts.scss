@@ -1,0 +1,120 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+
+.custom-datagrid {
+  height: 750;
+  width: 100%;
+  background: #030914;
+  border-radius: 4px;
+  //  data grid root
+  .MuiDataGrid-root {
+    border: none !important;
+    cursor: pointer;
+    color: $white;
+    font-family: 'Raleway';
+  }
+  //  data grid  header
+  .MuiDataGrid-columnHeaders {
+    color: $textColor2;
+    background-color: $grey2;
+    border-bottom: 4px solid #030914 !important;
+    // margin-bottom: 10px !important;
+  }
+  //  colum seperato '|'
+  .MuiDataGrid-root .MuiDataGrid-columnSeparator {
+    visibility: hidden;
+  }
+
+  //  each row in the grid
+  .MuiDataGrid-root .MuiDataGrid-row {
+    background-color: $grey3;
+    border: none !important;
+    border-bottom: 4px solid #030914 !important;
+  }
+  .MuiDataGrid-root .MuiDataGrid-cell {
+    border-bottom: none !important;
+  }
+  // .MuiDataGrid-main {
+  //   border-bottom: 1px solid $grey2;
+  //   border-left: 1px solid $grey2;
+  //   border-right: 1px solid $grey2;
+  // }
+  // all check box in the grid
+  .MuiCheckbox-root {
+    color: $textColor3 !important;
+  }
+
+  // checkbox icon
+  svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .loading-overlay svg {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  // pagination footer
+  .MuiDataGrid-root .MuiDataGrid-footerContainer {
+    justify-content: center !important;
+    background-color: #030914;
+    padding-top: 20px;
+    min-height: 100px !important;
+  }
+
+  .data-grid-pagination .Mui-selected {
+    background-color: $grey2 !important;
+  }
+
+  .MuiDataGrid-root .MuiDataGrid-row:hover,
+  .MuiDataGrid-root .MuiDataGrid-row.Mui-selected {
+    background-color: $grey2 !important;
+  }
+
+  .MuiDataGrid-root .MuiDataGrid-overlay {
+    background-color: transparent;
+    color: transparent;
+  }
+  .MuiPaginationItem-root {
+    color: $textColor3 !important;
+  }
+  .MuiPaginationItem-firstLast svg,
+  .MuiPaginationItem-previousNext svg {
+    color: $secondary !important;
+  }
+
+  // scrollbar
+  .MuiDataGrid-root *::-webkit-scrollbar {
+    width: 4px !important;
+    height: 4px !important;
+  }
+
+  .MuiDataGrid-root *::-webkit-scrollbar-thumb {
+    border: none !important ;
+    border-radius: 2px !important;
+    background: linear-gradient(90deg, #62bdff 0%, #3864ff 98.91%) !important;
+  }
+
+  // sort icons
+  svg {
+    color: $textColor2 !important;
+  }
+
+  .nothing-found {
+    width: 60%;
+    border-radius: 50% !important;
+    background-color: #0b111d;
+    color: $textColor2;
+    margin: auto;
+  }
+
+  .nothing-found-text {
+    color: $textColor2;
+  }
+}
+
+.disabled-datagrid {
+  svg {
+    color: $textColor3 !important;
+  }
+}

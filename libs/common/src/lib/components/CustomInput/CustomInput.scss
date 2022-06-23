@@ -1,0 +1,52 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+.MuiOutlinedInput-root {
+  background: #1b2434;
+}
+
+.MuiFilledInput-underline:before {
+  border-bottom: none !important;
+}
+
+.MuiFormHelperText-root {
+  position: absolute;
+  bottom: -24px;
+}
+
+.bup-textfield {
+  .MuiFormHelperText-root {
+    position: relative;
+    bottom: unset;
+  }
+}
+.custom-textfield {
+  .MuiFilledInput-input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px #1a202a inset !important;
+    box-shadow: 0 0 0 100px #1a202a inset !important;
+    border-top-left-radius: 0px !important ;
+    border-top-right-radius: 0px !important;
+  }
+}
+
+.apa-input-field {
+  background-color: $grey2 !important;
+  padding: 0px !important;
+  .MuiOutlinedInput-root {
+    background: $grey3;
+    font-weight: bolder !important;
+    font-size: 15px;
+  }
+  .MuiFilledInput-root {
+    background: $grey2;
+    font-size: 14px;
+    font-weight: bolder;
+    border-bottom: 2px solid $white !important;
+  }
+  .MuiFilledInput-root:hover,
+  .MuiFilledInput-root:focus,
+  .MuiFilledInput-root:active {
+    background: $grey2;
+  }
+  .Mui-focused {
+    border-bottom: none !important;
+  }
+}

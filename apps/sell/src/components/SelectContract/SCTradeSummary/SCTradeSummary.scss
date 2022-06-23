@@ -1,0 +1,76 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+
+.place-trade-button {
+  margin-bottom: 10px !important;
+  font-weight: bold !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+.place-trade-button-disabled {
+  background-color: transparent !important;
+  padding: 13px !important;
+  margin-bottom: 12px !important;
+  color: $textColor3 !important;
+  border: 2px solid $textColor3 !important;
+  cursor: default !important;
+}
+
+.hr-straight {
+  border: none;
+  border: 0.5px solid #25375b;
+  color: #fff;
+  background-color: #fff;
+  height: 1px;
+  width: 100%;
+  opacity: 0.6;
+}
+
+.hr-dotted {
+  border: none;
+  border: 0.5px dotted #22314e;
+  // color: #fff;
+  // background-color: #fff;
+  height: 1px;
+  width: 100%;
+}
+
+.active-clear-btn {
+  color: #fa002d;
+  cursor: pointer;
+}
+
+.disabled-clear-btn {
+  color: $textColor3 !important;
+}
+
+.pm {
+  background-color: $grey3;
+
+  .dotted-line {
+    margin-left: -10px;
+    color: #275abf;
+    height: 2px;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='%232e477a' stroke='%23111927' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  }
+}
+
+.sc {
+  background-color: $grey2;
+
+  .dotted-line {
+    margin-left: -10px;
+    color: #275abf;
+    height: 2px;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='%232e477a' stroke='%231b2434' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  }
+}
+
+.trade-summary-dialog {
+  background: $grey3;
+  &__desc {
+    color: $textColor2;
+    font-size: 12px;
+    line-height: 21px;
+  }
+}

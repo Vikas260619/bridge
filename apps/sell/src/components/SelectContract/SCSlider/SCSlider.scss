@@ -1,0 +1,43 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+
+// ₹0 text  ₹30L text, ₹75L text
+.MuiSlider-markLabel {
+  color: #7d87a6 !important;
+}
+
+// dots on slider
+
+.MuiSlider-markActive {
+  width: 0px !important;
+}
+.MuiSlider-mark {
+  width: 3px !important;
+  height: 30px !important;
+  border-radius: 30px !important;
+  background: #273140 !important;
+}
+
+// slider
+.select-offer-amount .MuiSlider-valueLabel {
+  color: white !important;
+  background-color: $secondary;
+}
+
+// track
+.MuiSlider-track {
+  background-color: $secondary !important;
+}
+
+.MuiSlider-root {
+  color: $secondary !important;
+}
+
+// ---------------------Custom-----------------------------
+
+.select-offer-amount {
+  background-color: $grey2;
+}
+
+.slider-box {
+  width: 80%;
+}

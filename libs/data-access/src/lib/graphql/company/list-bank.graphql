@@ -1,0 +1,18 @@
+query getBankList {
+  ref_bank {
+    id
+    name
+    bank_code
+    supported_integrations {
+      netbanking
+      statement_upload
+    }
+  }
+}
+
+query getBankAccountType {
+  ref_account_type {
+    id
+    name
+  }
+}

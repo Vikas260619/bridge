@@ -1,0 +1,46 @@
+@import '@bridgeup/common/design-system/_variables.scss';
+
+.filter-contracts-div {
+  background-color: #030914;
+  .MuiButton-root {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border-radius: 20px !important;
+    color: white;
+    // height: 25px;
+  }
+  .contracts-count {
+    color: #7d87a6;
+  }
+  .active-btn {
+    border: 1px solid #1976d2;
+  }
+  .filter-menu-item {
+    padding-top: 0px !important;
+    background-color: #1976d2 !important;
+    .MuiList-padding {
+      padding-top: 0px !important;
+    }
+    .MuiList-root {
+      background-color: #1976d2 !important;
+    }
+  }
+}
+
+.contracts-count {
+  color: #7d87a6;
+}
+
+.filter-menu-item ul .menu-item {
+  width: 250px;
+  background-color: #1b2434;
+  color: white;
+  padding: 16px;
+  &:hover {
+    background: #111927;
+  }
+}
+
+.filter-menu-item ul .active {
+  background: #111927;
+}

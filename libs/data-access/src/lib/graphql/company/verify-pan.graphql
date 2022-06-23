@@ -1,0 +1,9 @@
+query verifyPan($args: VerifyPanInput!) {
+  verifyPan(args: $args) {
+    gstin
+    message
+    name_on_pan
+    verified
+    registered_name
+  }
+}

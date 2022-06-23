@@ -1,0 +1,37 @@
+// .svgrrc.js
+module.exports = {
+  // icon: true,
+  // expandProps: false,
+  replaceAttrValues: {
+    BackgroundImage: 'BackgroundImageFix',
+  },
+  // svgo: true,
+  // svgoConfig: {
+  //   plugins: [
+  //     { removeViewBox: false },
+  //     { removeStyleElement: true },
+  //     { removeTitle: true },
+  //     { removeDesc: true },
+  //     { removeUselessDefs: true },
+  //     { removeDimensions: true },
+  //     { removeRasterImages: true },
+  //     { collapseGroups: true },
+  //     { cleanupNumericValues: { floatPrecision: 1 } },
+  //     { cleanupIDs: true },
+  //     { removeEmptyAttrs: true },
+  //     { cleanupAttrs: true },
+  //     { removeDoctype: true },
+  //     { removeComments: true },
+  //     { removeMetadata: true },
+  //     { removeEditorsNSData: true },
+  //     { removeUnknownsAndDefaults: true },
+  //     { removeUselessStrokeAndFill: true },
+  //     { removeHiddenElems: true },
+  //     { removeEmptyText: true },
+  //     { removeEmptyContainers: true },
+  //     { removeUnusedNS: true },
+  //     { convertColors: { currentColor: true } },
+  //     { removeAttrs: { attrs: '(fill|id|stroke)' } },
+  //   ],
+  // },
+};

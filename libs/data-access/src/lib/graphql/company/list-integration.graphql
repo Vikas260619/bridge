@@ -1,0 +1,54 @@
+query getListIntegrations {
+  listIntegrations {
+    source
+    url
+    auth_protocol
+    is_active
+    category
+    logo_url
+    integrations {
+      id
+      banking_partner {
+        account_type
+        is_primary
+        bank {
+          id
+          name
+        }
+        sequence
+      }
+      created_at
+      source_account_id
+      source
+      company_id
+      metadata
+      company_integrations(
+        order_by: { created_at: desc }
+        limit: 1
+        offset: 0
+      ) {
+        source
+        id
+        status
+        metadata
+        failure_reason
+        integration_auth {
+          id
+          bank_account {
+            id
+            account_no
+          }
+        }
+        company_integration_files {
+          status
+          failure_reason
+          file_registry {
+            name
+            location
+            id
+          }
+        }
+      }
+    }
+  }
+}

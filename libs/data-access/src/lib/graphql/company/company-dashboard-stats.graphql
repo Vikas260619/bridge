@@ -1,0 +1,35 @@
+query getDashboardStats {
+  company {
+    status
+    remaining_tradable_value
+    company_scores(limit: 1, order_by: { created_at: desc }) {
+      arr
+      facility_limit
+    }
+    deals(limit: 1, order_by: { created_at: desc }) {
+      status
+      deal_expiry
+      trades(limit: 1, order_by: { created_at: desc }) {
+        id
+        status
+        mandate_account {
+          account_no
+          ref_bank {
+            name
+          }
+        }
+      }
+      bids(order_by: { price: desc, created_at: desc }, limit: 1) {
+        price
+        id
+      }
+    }
+    trades_aggregate(where: { status: { _in: ["ACTIVE", "CLOSED"] } }) {
+      aggregate {
+        sum {
+          payout_value
+        }
+      }
+    }
+  }
+}

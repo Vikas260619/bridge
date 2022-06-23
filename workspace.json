@@ -1,0 +1,310 @@
+{
+  "version": 2,
+  "projects": {
+    "buy": {
+      "root": "apps/buy",
+      "sourceRoot": "apps/buy/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "defaultConfiguration": "production",
+          "options": {
+            "outputPath": "dist/apps/buy",
+            "index": "apps/buy/src/index.html",
+            "baseHref": "/",
+            "main": "apps/buy/src/main.tsx",
+            "polyfills": "apps/buy/src/polyfills.ts",
+            "tsConfig": "apps/buy/tsconfig.app.json",
+            "assets": [
+              "apps/buy/src/favicon.ico",
+              "apps/buy/src/assets",
+              "apps/buy/src/robots.txt",
+              "apps/buy/src/netlify.toml"
+            ],
+            "styles": ["apps/buy/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "apps/buy/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/buy/src/environments/environment.ts",
+                  "with": "apps/buy/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "buy:build",
+            "hmr": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "buy:build:production",
+              "hmr": false
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/buy/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/buy"],
+          "options": {
+            "jestConfig": "apps/buy/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "buy-e2e": {
+      "root": "apps/buy-e2e",
+      "sourceRoot": "apps/buy-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/buy-e2e/cypress.json",
+            "devServerTarget": "buy:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "buy:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/buy-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["buy"]
+    },
+    "common": {
+      "root": "libs/common",
+      "sourceRoot": "libs/common/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/common",
+            "tsConfig": "libs/common/tsconfig.lib.json",
+            "project": "libs/common/package.json",
+            "entryFile": "libs/common/src/index.ts",
+            "external": ["react/jsx-runtime"],
+            "rollupConfig": "libs/common/rollup.config.js",
+            "assets": [
+              {
+                "glob": "libs/common/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/common/**/*.{ts,tsx,js,jsx}"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common"],
+          "options": {
+            "jestConfig": "libs/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "data-access": {
+      "root": "libs/data-access",
+      "sourceRoot": "libs/data-access/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/data-access",
+            "tsConfig": "libs/data-access/tsconfig.lib.json",
+            "project": "libs/data-access/package.json",
+            "entryFile": "libs/data-access/src/index.ts",
+            "external": ["react/jsx-runtime"],
+            "rollupConfig": "libs/data-access/rollup.config.js",
+            "assets": [
+              {
+                "glob": "libs/data-access/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "generate": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx graphql-codegen --config libs/data-access/codegen.yml"
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/data-access/**/*.{ts,tsx,js,jsx}"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access"],
+          "options": {
+            "jestConfig": "libs/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "sell": {
+      "root": "apps/sell",
+      "sourceRoot": "apps/sell/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/sell",
+            "index": "apps/sell/src/index.html",
+            "main": "apps/sell/src/main.tsx",
+            "polyfills": "apps/sell/src/polyfills.ts",
+            "tsConfig": "apps/sell/tsconfig.app.json",
+            "assets": [
+              "apps/sell/src/favicon.ico",
+              "apps/sell/src/robots.txt",
+              "apps/sell/src/assets",
+              "apps/sell/src/netlify.toml"
+            ],
+            "styles": ["apps/sell/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "apps/sell/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/sell/src/environments/environment.ts",
+                  "with": "apps/sell/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "sell:build",
+            "hmr": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "sell:build:production",
+              "hmr": false
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/sell/**/*.{ts,tsx,js,jsx}"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/sell"],
+          "options": {
+            "jestConfig": "apps/sell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "sell-e2e": {
+      "root": "apps/sell-e2e",
+      "sourceRoot": "apps/sell-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/sell-e2e/cypress.json",
+            "devServerTarget": "sell:serve",
+            "tsConfig": "apps/sell-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "sell:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/sell-e2e/**/*.{js,ts}"]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["sell"]
+    }
+  }
+}

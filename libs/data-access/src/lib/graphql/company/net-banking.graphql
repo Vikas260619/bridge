@@ -1,0 +1,7 @@
+mutation netBankingPull($args: NetBankingPullInput!) {
+  netBankingPull(args: $args) {
+    id
+    url
+    message
+  }
+}

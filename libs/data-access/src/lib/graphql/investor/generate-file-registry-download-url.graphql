@@ -1,0 +1,5 @@
+query generateFileDownloadUrl($fileId: Int!) {
+  generateFileRegistryDownloadURL(args: { file_registry_id: $fileId }) {
+    download_url
+  }
+}

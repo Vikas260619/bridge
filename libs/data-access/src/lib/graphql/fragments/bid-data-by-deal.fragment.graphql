@@ -1,0 +1,18 @@
+#import "./bid-data-by-deal.fragment.graphql"
+
+fragment bidDataByDealFragment on deal {
+  your_bids(order_by: { price: desc, created_at: desc }) {
+    ...bidFragment
+  }
+  highest_bid(where: { id: { _is_null: false } }) {
+    ...bidFragment
+  }
+  bids_aggregate(order_by: { price: desc, created_at: desc }) {
+    aggregate {
+      count
+    }
+    nodes {
+      ...bidFragment
+    }
+  }
+}
